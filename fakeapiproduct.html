@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakenAPI</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        
+        function Getcategory(){
+            fetch("https://fakestoreapi.com/products/categories")
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(data){
+                data.unshift("ALL");
+                for(var item of data){
+                    var opt=document.createElement("option");
+                    
+                    opt.innerHTML=item.toUpperCase();
+                    opt.value=item;
+                    document.getElementById("lstcategory").appendChild(opt);
+                }
+            })
+        }
+        function GetProduct(url){
+            document.getElementById("cardisplay").innerHTML="";
+            fetch(url)
+            .then(function(cardinfo){
+                return cardinfo.json();
+            })
+            .then(function(carditem){
+                for(var carddetail of carditem)
+                {
+                    var carddiv=document.createElement("div");
+                    carddiv.className="card w-25";
+                    carddiv.style.marginRight="30px";
+                    carddiv.style.marginBottom="30px";
+                    carddiv.innerHTML=`
+                        <img src="${carddetail.image}" class="card-img-top p-2" width="200" height="200">
+                        <div class="card-header" style="height:150px;">
+                            <dl>
+                                <dt style="color:red;">ID:</dt>
+                                <dd>${carddetail.id}</dd>
+                                <dt style="color:red;">TITLE:</dt>
+                                <dd>${carddetail.title}</dd>
+                            </dl>
+                        </div>
+                        <div class="card-body">
+                            <dl>
+                                <dt>Category</dt>
+                                <dd>${carddetail.category}</dd>
+                                <dt>Rating</dt>
+                                <dd>${carddetail.rating.rate}</dd>
+                                <dt>Rating By No Of Coustomer</dt>
+                                <dd>${carddetail.rating.count}</dd>
+                            </dl>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-danger form-control" onclick="AddToCartItem(${carddetail.id})">Add To Cart</button>
+                        </div>  
+                    `;
+                    document.getElementById("cardisplay").appendChild(carddiv);
+                }
+            })
+        }
+        function rowitem(){
+            Getcategory();
+            GetProduct("https://fakestoreapi.com/products");
+            getcartitemcount();
+        }
+        
+        function CategorySelected(){
+            
+            var categoryitem=document.getElementById("lstcategory").value;
+            if(categoryitem=="ALL"){
+                GetProduct("https://fakestoreapi.com/products");
+            }else{
+                GetProduct(`https://fakestoreapi.com/products/category/${categoryitem}`);
+            }
+        }
+        var cartitem=[];
+        var count=0;
+        
+        function getcartitemcount(){
+            count=cartitem.length;
+            document.getElementById("cartcount").innerHTML=count;
+        }
+        function AddToCartItem(){
+            
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="rowitem()">
+    <h2 class="bg-danger text-center text-white p-2"><span class="bi bi-cart4"></span>FakeStoreApi</h2>
+    <div class="row">
+        <div class="col-2">
+            <select id="lstcategory" onchange="CategorySelected()">
+
+            </select>
+        </div>
+        
+        <div class="col-8 d-flex flex-wrap overflow-auto" id="cardisplay">
+
+        </div>
+        <div class="col-2">
+            <button class="btn btn-warning form-control">
+                [<span id="cartcount"></span>]
+                <span class="bi bi-cart3"></span> Add to Cart
+            </button>
+        </div>
+    </div>
+</body>
+</html>

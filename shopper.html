@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<head lang="en-in">
+    <body>
+        <meta name="viewport" content="width=device-width,intia-scale=1">
+        <meta charset="utf-8">
+        <title>Shopper Site</title>
+        <style>
+            header div{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+                background-color: black;
+                color: white;
+                padding: 10px;
+            }.title{
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+
+            }
+            span{
+                margin-right: 10px;
+            }
+            article {
+                justify-content: center;
+                text-align: center;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            main {
+                margin-top: 10px;
+                display: grid;
+                grid-template-columns: 4fr 4fr 4fr;
+               height: 600px;
+            }
+            .women{
+                background-image: url(../public/images/womenfashion.jpeg);
+                background-size:cover ;
+            }
+            .men{
+                background-image: url(../public/images/men\ fashion.webp);
+                background-size: cover;
+            }
+            .kids{
+                background-image:url(../public/images/kid.jpeg) ;
+                background-size: cover;
+            }
+            .name{
+                
+                font-size: 50px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+            .men, .women,.kids{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                opacity: 0.7;
+                color: white;
+            }
+            .men:hover{
+                opacity: 1;
+            }
+            .women:hover{
+                opacity: 1;
+            }
+            .kids:hover{
+                opacity: 1;
+            }
+            .about-company{
+                display: grid;
+                grid-template-columns: 3fr 3fr 3fr 3fr;
+                margin:20px;
+            }
+            .collection{
+                margin-top: 150px;
+                justify-content: center;
+                text-align: center;
+                
+            }
+            .title{
+                color: gray;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            .sub-title{
+                color: black;
+                font-size: 50px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            .end-title{
+                color: gray;
+                margin-bottom: 10px;
+            }
+            .bags-shirts{
+                display: grid;
+                grid-template-columns: 4fr 8fr;
+                height: 400px;
+                margin-top: 50px;
+
+            }
+            .bags{
+                background-color: rgba(red, green, rgb(232, 170, 226), 0.2);
+                background-image: url(../public/images/women\ bag.webp);
+                background-size: cover;
+                margin-left: 100px;
+                margin-right: 20px;
+            }
+            .shirts{
+                background-color:white ;
+                opacity: 0.7;
+                background-image:url(../public/images/men\ shirts.webp);
+                background-size: cover;
+                
+                margin-right: 100px;
+            }
+            .dress-hoodie{
+                display: grid;
+                grid-template-columns: 8fr 4fr;
+                height: 400px;
+                margin-top: 50px;
+
+            }
+            .dress{
+                background-color:white ;
+                opacity: 0.7;
+                background-image:url(../public/images/women\ etnic.webp);
+                background-size: cover;
+                margin-left: 100px;
+                margin-right: 20px;
+            }
+            .hoddie{
+                background-color: rgba(red, green, rgb(232, 170, 226), 0.2);
+                background-image: url(../public/images/women\ sweatshirt.webp);
+                background-size: cover;
+                margin-right: 100px;
+
+            }
+            .about-sell{
+                margin-top: 150px;
+                justify-content: center;
+                text-align: center;
+                
+            }
+            .top-seller{
+                font-size: 50px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                margin-bottom: 45px;
+            }
+            .division span{
+                margin-right: 35px;
+                font-size: 25px;
+                
+            }
+            .division{
+                margin-top: 50px;
+            }
+            .division :hover{
+                color: orangered;
+            }
+            
+            .body{
+                height: 370px;
+                width: 200px;
+               
+                margin-left: 100px;
+                margin-top: 100px;
+                
+            }
+            .image-body{
+                height: 250px;
+                padding: 5px;
+
+            }
+            .image{
+                width: 100%;
+                height: 250px;
+            }
+            .heading{
+                color: gray;
+                margin-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+            .subheading{
+                font-size: 17px;
+                margin-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+            .end{
+                color: gray;
+                margin-top: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .more{
+                justify-content: center;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 70px;
+                
+            }
+            .review-body{
+            height: 350px;
+            border: 2px solid rgb(110, 110, 110);
+            width: 300px;
+            margin-left: 70px;
+            margin-top: 70px;
+            
+        }
+        .image-review{
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            padding: 10px;
+            
+        }
+        .sneakers{
+            height: 100px;
+            width: 70%;
+            margin-left: 40px;
+        }
+        
+        .left-side{
+            margin-right: 20px;
+        }
+        .rigth-side{
+            margin-left: -10px;
+            margin-bottom: 10px;
+        }
+        .review-main-body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+       
+        
+        
+        .text{
+            line-height: 30px;
+            color: gray;
+            margin-left: 25px;
+            
+            
+        }
+        .reviews{
+            margin-top: 20px;
+            height: 100px;
+        }
+        .logan{
+            color: gray;
+            margin-left: 25px;
+            padding-top: 50px;
+        }
+        .product-name-1{
+            color: gray;
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        .product-name-2{
+            font-size: 15px;
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .product-name-3{
+            color: gray;
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 15px;
+        }
+        .text-1{
+            color: gray;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .text-2{
+            font-size: 50px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+        }
+        .pre-footer{
+            height: 600px;
+            margin-top: 100px;
+            background-color: rgb(238, 234, 234);
+        }
+        .p-f-heading{
+            
+            padding-top: 50px;
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .p-f-subheading{
+            margin-top: 20px;
+            color: gray;
+        }
+        .p-f-h{
+            text-align: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .product-image{
+            height: 200px;
+            
+            margin-top: 100px;
+        }
+        .p-image{
+            padding: 10px;
+            
+            
+        }
+        .p-i{
+            height: 175px;
+            width: 100%;
+        }
+        .p-img{
+            margin-left: 50px;
+            margin-right: 50px;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+        }
+        .brand{
+            margin-top: 80px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .mango{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .zara{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .reebook{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .asos{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .stardivarius{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .adidas{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .bershka{
+            font-size: 25px;
+            color: rgb(172, 171, 171);
+            margin-right: 75px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        footer{
+            background-color: black;
+            height: 500px;
+        }
+        .footer-text{
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+            color: white;
+        }
+        </style>
+
+    </body>
+    <head>
+        <header>
+            <div>
+                <div>
+                    <span class="title">Shopper.</span>
+
+                </div>
+                <div>
+                    <span>Home</span>
+                    <span>Catalog</span>
+                    <span>Shop</span>
+                    <span>Pages</span>
+                    <span>Blog</span>
+                    <span>Docs</span>
+                    
+                </div>
+                <div>
+                    <span>Icons</span>
+                    
+                </div>
+            </div>
+        </header>
+        <article>
+            <div>
+                <span> HAPPY HOLIDAY DEALS ON EVERYTHING </span>
+            </div>    
+        </article>
+        <main>
+           
+                <div class="women">
+                    <div>
+                        <div class="name">
+                            Women
+                        </div>
+                    </div>
+
+                </div>
+                <div class="men">
+                    <div>
+                        <div class="name">Men</div>
+                    </div>
+                </div>
+                <div class="kids">
+                    <div>
+                        <div class="name">
+                            Kids
+                        </div>
+                    </div>
+                    
+                </div>
+           
+
+        </main>
+        <div class="about-company">
+            <div>
+                <div>Free Shipping</div>
+                <div>From All Orders Above $100</div>
+            </div>
+            <div>
+                <div>Free Return</div>
+                <div>Return money within 30 days</div>
+            </div>
+            <div>
+                <div>SECURE SHOPPING</div>
+                <div>you are in save hands</div>
+            </div>
+            <div>
+                <div>OVER 10,000 STYLES</div>
+                <div>
+                    we have everything you need
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="collection">
+            <div>
+                <div class="title">NEW COLLECTION</div>
+                <div class="sub-title">Best Picks 2023</div>
+                <div class="end-title">Appear, dry there darkness they're seas, dry waters thing fly midst. Beast,</div>
+                <div class="end-title">above fly brought Very green.</div>
+            </div>
+
+        </div>
+        <div class="bags-shirts">
+            <div class="bags">
+
+            </div>
+            <div class="shirts">
+
+            </div>
+        </div>
+        <div class="dress-hoodie">
+            <div class="dress">
+
+            </div>
+            <div class="hoddie">
+
+            </div>
+
+        </div>
+        <div class="about-sell">
+            <div>
+                <span class="top-seller">Top month Seller</span>
+            </div>
+            <div class="division">
+                <span>
+                    Men
+                </span>
+                <span>
+                    Women
+                </span>
+                <span>
+                   kids
+                </span>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/san-jpg.jpeg" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">Shoes</div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Leather mid-heel Sandals</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>126.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/flora print dress.webp" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        Dresses
+                        
+                        
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Cotton floral print Dress</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>40.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/sneakers.jpeg" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        
+                        Tops
+
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">
+                        Cropped cotton Top
+                        
+                        
+                    </div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>29.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/cropped cotton top.webp" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        Dresses
+                        
+                        
+
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Floral print midi Dress</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>50.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/flora midi dress.webp" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        Bags
+
+
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Suede cross body Bag</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>49.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/bag .webp" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        Bags
+
+
+                        
+                        
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Suede cross body Bag</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>49.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/Printed A-line Skirt.webp" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        Skirts
+                        
+                        
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Printed A-line Skirt</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>79.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="image-body">
+                    <img src="../public/images/Heel strappy Sandals.webp" class="image">
+                </div>
+                <div class="heading">
+                    <div class="heading-text">
+                        Shoes
+
+
+                    </div>
+                </div>
+                <div class="subheading">
+                    <div class="subheading-text">Heel strappy Sandals</div>
+    
+                </div>
+                <div class="end">
+                    <div class="end-text">
+                        <span>&#36;</span><span>$90.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more">
+            <div class="text-1">
+                WHAT BUYERS SAY
+               
+            </div>
+           <div class="text-2">
+               Latest buyers Reviews
+           </div>
+            
+        </div>
+        <div class="review-main-body">
+            <div class="review-body">
+                <div class="image-review">
+                    <div class="left-side">
+                        <img src="../public/images/sneakers.jpeg" class="sneakers">
+                    </div>
+                    <div class="right-side">
+                        <div class="product-name-1">Shoes</div>
+                        <div class="product-name-2">Low top sneakers</div>
+                        <div class="product-name-3">3star</div>
+    
+                    </div>
+                    
+                </div>
+                <div class="reviews">
+                    <div class="text">The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!</div>
+                </div>
+                <div>
+                    <div class="logan"><span>Logan Edward,</span><span>01 jun 2019</span></div>
+                </div>
+            </div>
+            <div class="review-body">
+                <div class="image-review">
+                    <div class="left-side">
+                        <img src="../public/images/./cotton print dress.webp" class="sneakers">
+                    </div>
+                    <div class="right-side">
+                        <div class="product-name-1">Dress</div>
+                        <div class="product-name-2">Cotton Print Dress</div>
+                        <div class="product-name-3">3star</div>
+    
+                    </div>
+                    
+                </div>
+                <div class="reviews">
+                    <div class="text">The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!</div>
+                </div>
+                <div>
+                    <div class="logan"><span>Logan Edward,</span><span>01 jun 2019</span></div>
+                </div>
+            </div>
+            <div class="review-body">
+                <div class="image-review">
+                    <div class="left-side">
+                        <img src="../public/images/./bag .webp" class="sneakers">
+                    </div>
+                    <div class="right-side">
+                        <div class="product-name-1">Bag</div>
+                        <div class="product-name-2">Leather Bag</div>
+                        <div class="product-name-3">3star</div>
+    
+                    </div>
+                    
+                </div>
+                <div class="reviews">
+                    <div class="text">The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!</div>
+                </div>
+                <div>
+                    <div class="logan"><span>Logan Edward,</span><span>01 jun 2019</span></div>
+                </div>
+            </div>
+            <div class="review-body">
+                <div class="image-review">
+                    <div class="left-side">
+                        <img src="../public/images/./oversized tshirt.webp" class="sneakers">
+                    </div>
+                    <div class="right-side">
+                        <div class="product-name-1">tshirt</div>
+                        <div class="product-name-2">Oversized tshirt</div>
+                        <div class="product-name-3">3star</div>
+    
+                    </div>
+                    
+                </div>
+                <div class="reviews">
+                    <div class="text">The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!</div>
+                </div>
+                <div>
+                    <div class="logan"><span>Logan Edward,</span><span>01 jun 2019</span></div>
+                </div>
+            </div>
+            <div class="review-body">
+                <div class="image-review">
+                    <div class="left-side">
+                        <img src="../public/images/sneakers.jpeg" class="sneakers">
+                    </div>
+                    <div class="right-side">
+                        <div class="product-name-1">Shoes</div>
+                        <div class="product-name-2">Low top sneakers</div>
+                        <div class="product-name-3">3star</div>
+    
+                    </div>
+                    
+                </div>
+                <div class="reviews">
+                    <div class="text">The best Running Shoes Reviews on the internet! Our testers run and analyze all the latest shoes - and you can read hundreds of feedback from our readers!</div>
+                </div>
+                <div>
+                    <div class="logan"><span>Logan Edward,</span><span>01 jun 2019</span></div>
+                </div>
+            </div>
+    
+    
+    
+    
+    
+        </div>
+        <div class="pre-footer">
+            <div>
+                <div class="p-f-h">
+                    <div class="p-f-heading">Shopper</div>
+                    <div class="p-f-subheading">Appear, dry there darkness they're seas, dry waters.</div>
+                </div>
+               
+            <div class="product-image">
+               <div class="p-img">
+                    <div class="p-image"><img src="../public/images/./product-16.jpg" class="p-i"></div>
+                    <div class="p-image"><img src="../public/images/./product-17.jpg" class="p-i"></div>
+                    <div class="p-image"><img src="../public/images/./product-18.jpg" class="p-i"></div>
+                    <div class="p-image"><img src="../public/images/./product-19.jpg" class="p-i"></div>
+                    <div class="p-image"><img src="../public/images/./product-20.jpg" class="p-i"></div>
+                    <div class="p-image"><img src="../public/images/./product-21.jpg" class="p-i"></div>
+                    
+               </div>
+               
+            </div>
+            <div class="brand">
+                <div>
+                    <span class="mango">MANGO</span>
+                    <span class="zara">ZARA</span>
+                    <span class="reebook">Reebook</span>
+                    <span class="asos">asos</span>
+                    <span class="stardivarius">stardivarius</span>
+                    <span class="adidas">adidas</span>
+                    <span class="bershka">Bershka</span>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <div class="footer-text">
+                <div>Want style Ideas and Treats?</div>
+            </div>
+        </footer>
+        
+
+    </head>
+</head>

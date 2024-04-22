@@ -1,0 +1,120 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nasa Api</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script type="text/javascript">
+            var info=[
+                {PhotoId=234, CameraName="Sony", Photo="../public/images/chair.jpg",RoverName="Lion"}
+            ];
+            function bodyload(){
+                alert(`hii`);
+                for(var item of info){
+                    var tablebodyrow=document.createElement("tr");
+                    var tablebodytd1=document.createElement("td");
+                    var tablebodytd2=document.createElement("td");
+                    var tablebodytd3=document.createElement("td");
+                    var tablebodytd4=document.createElement("td");
+
+                    tablebodytd1.innerHTML=item.PhotoId;
+                    tablebodytd2.innerHTML=item.CameraName;
+                    
+                    var pic=document.createElement("img");
+                    pic.src=item.Photo;
+                    pic.width="100";
+                    pic.height="100";
+                    tablebodytd3.appendChild(pic);
+                    tablebodytd4.innerHTML=item.RoverName;
+
+                    tablebodyrow.appendChild(tablebodytd1);
+                    tablebodyrow.appendChild(tablebodytd2);
+                    tablebodyrow.appendChild(tablebodytd3);
+                    tablebodyrow.appendChild(tablebodytd4);
+
+                    document.querySelector("tbody").appendChild(tablebodyrow);
+                }
+            }
+        </script>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <h2 class="text-center">Nasa Api</h2>
+        <table class="table table-hover bg-dark">
+            <thead>
+                <tr>
+                    <th>Photo Id</th>
+                    <th>Camera Name</th>
+                    <th>Photo</th>
+                    <th>Rover Name</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa API</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function nasa(){
+            fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY")
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                for(var item of data.photos){
+                    var tablebodyrow=document.createElement("tr");
+                    var tablebodytd1=document.createElement("td");
+                    var tablebodytd2=document.createElement("td");
+                    var tablebodytd3=document.createElement("td");
+                    var tablebodytd4=document.createElement("td");
+
+                    tablebodytd1.innerHTML=item.id;
+                    tablebodytd2.innerHTML=item.camera.name;
+                    
+                    var pic=document.createElement("img");
+                    pic.src=item.img_src;
+                    pic.width="100";
+                    pic.height="100";
+                    tablebodytd3.appendChild(pic);
+                    tablebodytd4.innerHTML=item.rover.name;
+
+                    tablebodyrow.appendChild(tablebodytd1);
+                    tablebodyrow.appendChild(tablebodytd2);
+                    tablebodyrow.appendChild(tablebodytd3);
+                    tablebodyrow.appendChild(tablebodytd4);
+
+                    document.querySelector("tbody").appendChild(tablebodyrow);
+                }
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="nasa()">
+    <h2 class="text-center">Nasa Mars Rover Photos</h2>
+    <table class="table table-hover bg-dark border-2">
+        <thead>
+            <tr>
+                <th>Photo Id</th>
+                <th>Camera Name</th>
+                <th>Photo</th>
+                <th>Rover Name</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cotzila</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,intial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            header{
+                display: flex;
+                justify-content: space-between;
+            }
+            .cart{
+                margin: 20px;
+            }
+            .buy{
+                height: 20px;
+                width: 300px;
+                border: 1px solid red;
+                padding: 10px;
+                background-color:rgb(221, 28, 28) ;
+                color: white;
+                
+
+            }
+            .Now :hover{
+               background-color: green;
+               color: white;
+            }
+            .Now{
+                margin-top: 20px;
+                
+            }
+            .home{
+                
+                margin-top: 20px;
+                font-size: 20px;
+                color: gray;
+                
+            }
+            
+            span{
+                margin-right: 20px;
+            }
+            .sec{
+                background-image: url(../public/images/01.jpg);
+                background-size: cover;
+                height: 500px;
+                width: 100%;
+                color: black;
+                background-repeat: no-repeat;
+            }
+            .has{
+                font-size: 50px;
+                color: white;
+                font-weight: lighter;
+                margin-bottom: 10px;
+                
+            }
+            .sec-text{
+                padding-top: 100px;
+                padding-left: 50px;
+            }
+            .huge{
+                font-size: 50px;
+                color: white;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .swim{
+                font-size: 25px;
+                color: white;
+                font-weight: lighter;
+                margin-bottom: 30px;
+                
+            }
+            button{
+                background-color: rgb(241, 45, 45);
+                height: 50px;
+                width: 150px;
+                color: white;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: 4fr 4fr 4fr;
+                height: 280px;
+                background-color: rgb(224, 224, 224);
+                width: 700px;
+                
+            }
+            .card{
+                height: 200px;
+                margin: 20px;
+            }
+            .image{
+                width: 100%;
+                height: 200px;
+            }
+            .i-text{
+                margin-top: 20px;
+                font-size: 20px;
+                text-align: left;
+            }
+            .trending
+            {
+                font-size: 30px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                margin-top: 50px;
+                color: rgb(87, 86, 86);
+            }
+            .trending-container{
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 80px;
+            }
+            .trending-card{
+                height: 300px;
+                width: 250px;
+                margin-top: 50px;
+                
+                margin-right: 40px;
+            }
+            .t-image{
+                height: 200px;
+                width: 100%;
+            }
+            .price-rating{
+                display: grid;
+                grid-template-columns: 6fr 6fr;
+            }
+            .rating span{
+                margin-right: 0px;
+                color: orange;
+            }
+            .sneakers{
+                color: rgb(187, 183, 183);
+                font-weight: lighter;
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
+            .women{
+                margin-left: 20px;
+                margin-bottom: 10px;
+                color: rgb(51, 50, 50);
+                font-weight: bold;
+            }
+            .price-rating{
+                margin-left: 20px;
+                margin-bottom: 10px;
+            }
+            .price{
+                color: blueviolet;
+            }
+            .products{
+                
+                margin-top: 70px;
+                display: flex;
+                justify-content: center;
+            }
+            .more::after{
+                content: ">";
+                margin-left: 7px;
+            }
+            .more{
+                border: 1px solid royalblue ;
+                text-align: center;
+                padding: 10px;
+                color: royalblue;
+                
+            }
+            .more:hover{
+                background-color: blue;
+                color: white;
+            }
+            .banner-container{
+                display: grid;
+                grid-template-columns: 8fr 4fr;
+            }
+            .banner-card{
+                background-image: url(../public/images/banner01-cartzilla.jpeg);
+                background-size:cover;
+                height: 400px;
+                margin: 100px 0px 0px 40px;
+                
+            }
+            .hurry{
+                padding-top: 50px;
+                padding-left: 40px;
+                color: rgb(73, 73, 73);
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: lighter;
+            }
+            .converse{
+                margin-top: 10px;
+                padding-left: 40px;
+                font-size: 35px;
+                font-weight: bold;
+            }
+            .shop{
+                border: 1px solid rgb(219, 99, 99);
+                background-color:rgb(219, 99, 99);
+                margin-top: 20px;
+                margin-left: 40px;
+                width: 70px;
+                color: white;
+                padding: 10px;
+            }
+            .hoodie-container{
+                display: grid;
+                grid-template-columns: 5fr 7fr;
+                height: 800px;
+                margin-top: 100px;
+            }
+            .hoodie-card{
+                background-image: url(../public/images/hoddie-1.jpeg);
+                background-size: cover;
+                margin-left: 40px;
+                border: 1px solid white;
+                border-radius: 10px;
+
+            }
+            .hoodie-2-container{
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+            .hoodie-2-card{
+                height: 380px;
+                margin-left: 30px;
+                margin-top: 20px;
+            }
+            
+            .h-image{
+                height: 250px;
+                width: 100%;
+            }
+            .hoodie-price{
+                display: grid;
+                grid-template-columns: 6fr 6fr;
+                margin-left: 20px;
+            }
+            .star span{
+                margin-right: 0px;
+                color: orange;
+            }
+            .h-text-1{
+                color: rgb(187, 184, 184);
+                margin-left: 20px;
+                margin-bottom: 10px;
+                font-size: 15px;
+            }
+            .h-text-2{
+                margin-left: 20px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .h-day{
+                font-size: 35px;
+                margin-left: 25px;
+                margin-top: 25px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+            }
+            .h-shop{
+                color: rgb(234, 90, 90);
+                margin-left: 25px;
+                margin-top: 15px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+                font-size: 20px;
+
+            }
+            .h-shop::after{
+                content: ">";
+                margin-left: 10px;
+            }
+            .s-b-b{
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+                font-size: 25px;
+                font-weight: bolder;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .shop-container{
+                
+                margin-top: 50px;
+            }
+            .shop-card{
+                
+                height: 150px;
+                width: 280px;
+                border: 2px solid white;
+                border-radius: 10px;
+                margin: 20px;
+                padding-top: 50px;
+                background-color: white;
+                box-shadow: 10px 10px 10px gainsboro;
+                
+            }
+            .s-image{
+                
+                width: 100%;
+                height: 100px;
+            }
+            .shop-main{
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                
+            }
+            .blog{
+                display: grid;
+                grid-template-columns: 6fr 6fr;
+                margin-top: 50px;
+                height: 150px;
+            }
+            .blogg{
+                background-color: rgb(221, 129, 144);
+                
+            }
+            .insta{
+                background-color: skyblue;
+                
+            }
+            .b-text{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 25px;
+                font-weight: bold;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin-top: 5px;
+                
+            }
+            .i-text{
+                font-weight: bolder;
+                color: gray;
+                font-size: 15px;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                margin-top: 5px;
+            }
+            .bi-instagram{
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                font-size: 40px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                
+            }
+            .bi-pencil-square{
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                font-size: 40px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            a{
+                text-decoration: none;
+            }
+            footer{
+                display: grid;
+                grid-template-columns: 4fr 4fr 4fr;
+                background-color: rgb(32, 32, 59);
+            }
+            .f-heading{
+                margin-top: 30px;
+                margin-left: 20px;
+                font-weight:bold ;
+                color: white;
+            }
+            .f-heading~div{
+                margin-left: 20px;
+                margin-top: 5px;
+                color: gray;
+            }
+            .f-heading~div:hover{
+                color: white;
+            }
+            .email{
+                width: 250px;
+                height: 35px;
+                color: gray;
+                border: 1px solid white;
+                margin-top: 25px;
+                background-color: white;
+            }
+            .support{
+                display: grid;
+                grid-template-columns: 3fr 3fr 3fr 3fr;
+                margin-top: 50px;
+            }
+            .bi-rocket-takeoff{
+                color: orangered;
+                font-size: 35px;
+                padding: 10px;
+                padding-top:0px ;
+            }
+            .s-column{
+                display: flex;
+            }
+            .bi-window{
+                color: orangered;
+                font-size: 35px;
+                padding: 10px;
+                padding-top:0px ;
+            }
+            .bi-headset{
+                color: orangered;
+                font-size: 45px;
+                padding: 10px;
+                padding-top:0px ;
+            }
+            .bi-currency-dollar{
+                color: orangered;
+                font-size: 45px;
+                padding: 10px;
+                padding-top:0px ;
+            }
+            .finishing{
+                display: grid;
+                grid-template-columns: 6fr 4fr 2fr;
+                margin-top:50px ;
+                background-color: darkslateblue;
+                height: 150px;
+            }
+            .description span{
+                color: gray;
+                margin-right: 15px;
+                margin-left: 5px;
+            }
+            .description{
+                margin-top: 30px;
+                margin-left: 10px;
+            }
+            
+            .last-icon div{
+                margin-right: 15px;
+                background-color: rgb(28, 28, 87);
+                border: 1px solid rgb(28, 28, 87);
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+                
+            }
+            
+            .last-icon{
+                display: flex;
+                margin-top: 40px;
+            }
+            .last-title{
+                display: flex;
+            }
+            .l-heading{
+                font-size: 30px;
+                color: white;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+                margin: 10px;
+            }
+            .l-form{
+                margin: 10px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="cart">
+                <font face="Arial" size="5" ><span>Cartzilla</span></font>
+            </div>
+            <div class="home">
+               
+                    <nav>
+                        <span>Home</span>
+                        <span>Shop</span>
+                        <span>Account</span>
+                        <span>Blog</span>
+                        <span>Docs/Component</span>
+                    </nav>
+                
+                
+            </div>
+            <div class="Now">
+                <span class="buy" id="backtotop">Buy Now</span>
+                
+            </div>
+        </header>
+        <div class="sec">
+            <div class="sec-text">
+                <div class="has">Has just arrived!</div>
+                <div class="huge">Huge Summer Collection</div>
+                <div class="swim">Swimwear,Tops,Shorts & much more</div>
+                <div><button>Shop Now</button></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card ">
+                <div>
+                    <img src="../public/images/cat-sm01.jpg" class="image">
+                </div>
+                <div>
+                    <div class="i-text">Men</div>
+                </div>
+            </div>
+            <div class="card ">
+                <div>
+                    <img src="../public/images/cat-sm02.jpg" class="image">
+                </div>
+                <div>
+                    <div class="i-text">Women</div>
+                </div>
+            </div>
+            <div class="card ">
+                <div>
+                    <img src="../public/images/cat-sm03.jpg" class="image">
+                </div>
+                <div>
+                    <div class="i-text">Kids</div>
+                </div>
+            </div>
+        </div>
+        <div class="trending">
+            Trending products
+        </div>
+        <div class="trending-container">
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-08.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-1.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-02.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-03.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-04.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-05.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-06.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="trending-card">
+                <div>
+                    <img src="../public/images/cartzilla-07.jpeg" class="t-image">
+                </div>
+                <div class="sneakers">
+                    sneakers and Keds
+                </div>
+                <div class="women">
+                    Women colorblock Sneakers
+                </div>
+                <div class="price-rating">
+                    <div class="price">&#36;154.00</div>
+                    <div class="rating">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-half"></span>
+                        <span class="bi bi-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="more">More products</div>
+        </div>
+        <div class="banner-container">
+            <div class="banner-card">
+                <div class="banner-1">
+                    <div class="hurry">Hurry Up! Limited time offer</div>
+                    <div class="converse">Converse all star on sale</div>
+                    <div class="shop">
+                        Shop now
+                    </div>
+                </div>
+
+            </div>
+            <div class="banner-card">
+                <div class="banner-1">
+                    <div class="converse">You add banner here</div>
+                    <div class="hurry">Hurry up to reserve your spot</div>
+                    <div class="shop">Contact</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="hoodie-container">
+            <div class="hoodie-card">
+                <div>
+                    <div class="h-day">Hoodie day</div>
+                    <div class="h-shop">Shop hoodies</div>
+                </div>
+            </div>
+            <div class="hoodie-2-container">
+                <div class="hoodie-2-card">
+                    <div>
+                        <img src="../public/images/hoddie-2.jpeg" class="h-image">
+                    </div>
+                    <div class="h-text-1">Hoddies and Sweatshirt</div>
+                    <div class="h-text-2">Black-colored hooded top</div>
+                    <div class="hoodie-price">
+                        <div class="price">&#36;24.99</div>
+                        <div class="star">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                            <span class="bi bi-star"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hoodie-2-card">
+                    <div>
+                        <img src="../public/images/hoodie-3.jpeg" class="h-image">
+                    </div>
+                    <div class="h-text-1">Hoddies and Sweatshirt</div>
+                    <div class="h-text-2">Black-colored hooded top</div>
+                    <div class="hoodie-price">
+                        <div class="price">&#36;24.99</div>
+                        <div class="star">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                            <span class="bi bi-star"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hoodie-2-card">
+                    <div>
+                        <img src="../public/images/hoodie-4.jpeg" class="h-image">
+                    </div>
+                    <div class="h-text-1">Hoddies and Sweatshirt</div>
+                    <div class="h-text-2">Black-colored hooded top</div>
+                    <div class="hoodie-price">
+                        <div class="price">&#36;24.99</div>
+                        <div class="star">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                            <span class="bi bi-star"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hoodie-2-card">
+                    <div>
+                        <img src="../public/images/hoodie-5.jpeg" class="h-image">
+                    </div>
+                    <div class="h-text-1">Hoddies and Sweatshirt</div>
+                    <div class="h-text-2">Black-colored hooded top</div>
+                    <div class="hoodie-price">
+                        <div class="price">&#36;24.99</div>
+                        <div class="star">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                            <span class="bi bi-star"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hoodie-2-card">
+                    <div>
+                        <img src="../public/images/hoodie-6.jpeg" class="h-image">
+                    </div>
+                    <div class="h-text-1">Hoddies and Sweatshirt</div>
+                    <div class="h-text-2">Black-colored hooded top</div>
+                    <div class="hoodie-price">
+                        <div class="price">&#36;24.99</div>
+                        <div class="star">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                            <span class="bi bi-star"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hoodie-2-card">
+                    <div>
+                        <img src="../public/images/hoodie-7.jpeg" class="h-image">
+                    </div>
+                    <div class="h-text-1">Hoddies and Sweatshirt</div>
+                    <div class="h-text-2">Black-colored hooded top</div>
+                    <div class="hoodie-price">
+                        <div class="price">&#36;24.99</div>
+                        <div class="star">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                            <span class="bi bi-star"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+        <div>
+            <div class="s-b-b">
+                Shop By Brand
+            </div>
+        </div>
+        <div class="shop-container">
+            <div class="shop-main">
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/tommy.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/nike.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/american.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/adidas.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/dior.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/hermes.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/nike.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/puma.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/columbia.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/brooks.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/rayban.png" class="s-image">
+                    </div>
+                </div>
+                <div class="shop-card">
+                    <div>
+                        <img src="../public/images/nb.png" class="s-image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="blog">
+            <div class="blogg">
+                <div>
+                    <div class="bi bi-pencil-square"></div>
+                    <div class="b-text">Read the blog</div>
+                    <div class="i-text"> 
+                        latest store,fashion news and trends
+                    </div>
+                </div>
+            </div>
+            <div class="insta">
+                <div>
+                    <div>
+                        <a href="#backtotop" class="bi bi-instagram"></a>
+                    </div>
+                    <div class="b-text">Follow on instagram</div>
+                    <div class="i-text">#shopwithcartzilla</div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div>
+                <div class="f-heading">Shop departments</div>
+                <div>Sneakers & Athletic</div>
+                <div>Athletic Apparel</div>
+                <div>Sandals</div>
+                <div>Jeans</div>
+                <div>Shirts & Tops</div>
+                <div>Shorts</div>
+                <div>T-Shirts</div>
+                <div>Swimwear</div>
+                <div>Clogs & Mules</div>
+                <div>Bags & Wallets</div>
+                <div>Accessories</div>
+                <div>Sunglasses & Eyewear</div>
+                <div>Watches</div>
+            </div>
+            <div>
+                <div>
+                    <div class="f-heading">Account & shipping info</div>
+                    <div>Your account</div>
+                    <div>Shipping rates & policies</div>
+                    <div>Refunds & replacements</div>
+                    <div>Order tracking</div>
+                    <div>Delivery info</div>
+                    <div>Taxes & fees</div>
+                </div>
+                <div>
+                    <div class="f-heading">About us</div>
+                    <div>About company</div>
+                    <div>Our team</div>
+                    <div>Careers</div>
+                    <div>News</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="f-heading">Stay informed</div>
+                
+            </div>
+        </footer>
+        <div class="support">
+            <div class="s-column">
+                <div class="bi bi-rocket-takeoff"></div>
+                <div>
+                    <div>fast and free delivery</div>
+                    <div>free delivery for all orders above</div>
+                    <div>&#36;100</div>
+                </div>
+            </div>
+            <div class="s-column">
+                <div class="bi bi-headset"></div>
+                <div>
+                    <div>Money back guarantee</div>
+                    <div>We return money within 30 days</div>   
+                </div>
+            </div>
+            <div class="s-column">
+                <div class="bi bi-currency-dollar"></div>
+                <div>
+                    <div>Secure online payment
+                    </div>
+                    <div>We possess SSL / Secure сertificate</div>
+                    
+                </div>
+            </div>
+            <div class="s-column">
+                <div class="bi bi-window"></div>
+                <div>
+                    <div>24/7 customer support
+                        </div>
+                    <div>Friendly 24/7 customer support</div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="finishing">
+            <div>
+                <div class="last-title">
+                    <div class="l-heading">Cartzilla</div>
+                    <div class="l-form">
+                        <form>
+                            <select>
+                                <optgroup>
+                                    <option>Eng/&#36;</option>
+                                    <option>French</option>
+                                    <option>India</option>
+                                </optgroup>
+                            </select>
+                        </form>
+                        
+                    </div>
+                </div>
+                <div class="description">
+                    <span>Outlets</span>
+                    <span>Affilites</span>
+                    <span>Support</span>
+                    <span>Privacy</span>
+                    <span>Term of use</span>
+                </div>
+            </div>
+            <div class="empty">
+
+            </div>
+            <div>
+                <div class="last-icon">
+                    
+                    <div class="bi bi-twitter" ></div>
+                    <div class="bi bi-facebook"></div>
+                    <div class="bi bi-snapchat"></div>
+                    <div class="bi bi-pinterest"></div>
+                    <div class="bi bi-youtube"></div>
+                
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
